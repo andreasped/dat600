@@ -39,9 +39,9 @@ def fractional_knapsack(items, capacity):
             capacity -= weight
             total_value += value
         else:
-            fraction = capacity / weight
+            fraction = round(capacity / weight, 2)
             selected.append((weight, value, fraction))  # Take fraction of item
-            total_value += value * fraction
+            total_value += round(value * fraction, 2)
             break
     
     return total_value, selected
